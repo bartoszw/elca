@@ -1,0 +1,38 @@
+Name:		elca
+Version:	1.4.3
+License:	BSD3
+Author:		Bartosz Wojcik
+Maintainer:	Bartosz Wojcik
+Copyright:  Copyright (c) 2005-2011 Bartosz Wojcik
+Category:	Financial
+Synopsis:	Loan calculator engine.
+Stability:  experimental
+Build-type:	Simple
+Description: Loan calculator engine working according to rules of CFG.
+
+Cabal-Version: >=1.2.3
+
+library
+  Build-Depends:	base, old-time
+  Exposed-Modules: ElcaUI
+  Other-Modules: LoanConfigurationType,
+                 LoanConfiguration,
+                 LoanCalendars,
+                 LoanCalculator,
+                 Loans,
+                 LoanUserInterface,
+                 LoanEarlyPayment,
+                 LoanVarioALZ,
+                 BWLib,
+                 LoanCommissionConf,
+                 LoanCommission,
+                 OutputFormat
+
+Executable elcaQC
+  Build-Depends:	old-time, QuickCheck, mtl, time
+  Main-Is: ElcaQC.hs
+
+Executable elcaSample
+  Build-Depends:	old-time, QuickCheck, mtl, time, wtk
+  Main-Is: Sample.hs
+
